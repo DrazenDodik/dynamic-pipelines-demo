@@ -16,7 +16,7 @@
           multiple: separate
           multiple-separator: ','
           optional: false
-        - name: test_train_split
+        - name: validation_split
           default: 0.3
           type: float
 

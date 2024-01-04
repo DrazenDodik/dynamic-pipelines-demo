@@ -8,7 +8,7 @@ import os
 
 # Get dataset names and the size for validation set
 dataset_names = valohai.parameters("dataset_names").value
-test_train_split = valohai.parameters("test_train_split").value
+validation_split = valohai.parameters("validation_split").value
 
 # Read the execution details from the configuration file for dataset naming
 f = open("/valohai/config/execution.json")
@@ -59,7 +59,7 @@ for dataset in dataset_names:
 
     print("Splitting to training and validation data...")
     X_train, X_val, Y_train, Y_val = preprocess.splitdata(
-        rez_images, onehot_labels, test_train_split
+        rez_images, onehot_labels, validation_split
     )
 
     # Save preprocessed training data
